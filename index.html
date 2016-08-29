@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Car table app</title>
+</head>
+<body ng-app="carTableApp">
+    <div ng-controller="carController">
+        <h3>Biltabell</h3>
+        <table >
+            <tr>
+                <th>License</th>
+                <th>Brand</th>
+                <th>Model</th>
+                <th>Year</th>
+            </tr>
+            <tr ng-repeat = "car in cars track by $index">
+                <td><a ng-click="edit = !edit">{{car.license}}</a><input ng-show="edit"></td>
+                <td>{{car.brand}}</td>
+                <td>{{car.model}}</td>
+                <td>{{car.year}}</td>
+          </tr>
+        </table>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    <script src="app.js" type="text/javascript"></script>
+    <script src="controller.js" type="text/javascript"></script>
+</body>
+</html>
