@@ -1,10 +1,3 @@
-//Texten ska bytas ut mot input-fältet när man klickar på texten
-//Input-fältet ska innehålla registreringsnumret så att man kan redigera det
-//det man skriver in i fältet blir den nya texten
-//Lägg till så att man kan redigera alla fält i tabellen
-//Skapa ett par egna directives
-//funktionalitet för att lägga till och ta bort en bil
-
 app.controller('carController', function($scope, $http) {
 
     $scope.cars = [
@@ -28,5 +21,11 @@ app.controller('carController', function($scope, $http) {
             year: '2016'
         }
     ];
+});
 
+
+app.directive('carTable', function(){
+    return {
+        templateUrl: 'car-table.html'
+    };
 });

@@ -1,0 +1,27 @@
+<h3>Biltabell</h3>
+<table >
+    <tr>
+        <th>License</th>
+        <th>Brand</th>
+        <th>Model</th>
+        <th>Year</th>
+    </tr>
+    <tr ng-repeat = "car in cars">
+        <td>
+            <input ng-model='car.license' type='text' value="{{car.license}}" ng-show="car.editLicense" ng-blur="car.editLicense=false">
+            <a ng-click="car.editLicense = !car.editLicense" ng-hide="car.editLicense">{{car.license}}</a>
+        </td>
+        <td>
+            <input ng-model='car.brand' type='text' value="{{car.brand}}" ng-show="car.editBrand" ng-blur="car.editBrand=false">
+            <a ng-click="car.editBrand = !car.editBrand" ng-hide="car.editBrand">{{car.brand}}</a>
+        </td>
+        <td>
+            <input ng-model='car.model' type='text' value="{{car.model}}" ng-show="car.editModel" ng-blur="car.editModel=false">
+            <a ng-click="car.editModel = !car.editModel" ng-hide="car.editModel">{{car.model}}</a>
+        </td>
+        <td>
+            <input ng-model='car.year' type='text' value="{{car.year}}" ng-show="car.editYear" ng-blur="car.editYear=false">
+            <a ng-click="car.editYear = !car.editYear" ng-hide="car.editYear">{{car.year}}</a>
+        </td>
+  </tr>
+</table>
