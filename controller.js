@@ -21,11 +21,13 @@ app.controller('carController', function($scope, $http) {
             year: '2016'
         }
     ];
-});
 
+    $scope.deleteCar = function(index){
+        $scope.cars.splice(index,1);
+    }
 
-app.directive('carTable', function(){
-    return {
-        templateUrl: 'car-table.html'
-    };
+    $scope.addCar = function(){
+        var newCar = { license: 'edit', brand: 'edit', model: 'edit', year: 'edit' };
+        $scope.cars.push(newCar);
+    }
 });

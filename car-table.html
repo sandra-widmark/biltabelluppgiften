@@ -6,7 +6,7 @@
         <th>Model</th>
         <th>Year</th>
     </tr>
-    <tr ng-repeat = "car in cars">
+    <tr ng-repeat = "car in cars track by $index">
         <td>
             <input ng-model='car.license' type='text' value="{{car.license}}" ng-show="car.editLicense" ng-blur="car.editLicense=false">
             <a ng-click="car.editLicense = !car.editLicense" ng-hide="car.editLicense">{{car.license}}</a>
@@ -22,6 +22,9 @@
         <td>
             <input ng-model='car.year' type='text' value="{{car.year}}" ng-show="car.editYear" ng-blur="car.editYear=false">
             <a ng-click="car.editYear = !car.editYear" ng-hide="car.editYear">{{car.year}}</a>
+        </td>
+        <td>
+            <a ng-click="deleteCar($index)">Ta bort bil</a>
         </td>
   </tr>
 </table>
